@@ -27,6 +27,7 @@ export const DivStyle = styled.div<IDivStyle>`
 
   svg {
     font-size: 1.8rem;
+    stroke-width: 1.5px;
 
     ${({ selected }) =>
       selected &&

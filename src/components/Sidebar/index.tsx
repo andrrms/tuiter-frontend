@@ -19,37 +19,25 @@ const Sidebar: React.FC = () => {
       <ThemeSidebarLinkButton selected={actualPath === "/home"} to="/home">
         <FiHome /> <span>Página Inicial</span>
       </ThemeSidebarLinkButton>
-      <ThemeSidebarLinkButton
-        selected={actualPath === "/explore"}
-        to="/explore"
-      >
+      <ThemeSidebarLinkButton selected={actualPath === "/explore"} to="#">
         <FiHash /> <span>Explorar</span>
       </ThemeSidebarLinkButton>
-      <ThemeSidebarLinkButton
-        selected={actualPath === "/notifications"}
-        to="/notifications"
-      >
+      <ThemeSidebarLinkButton selected={actualPath === "/notifications"} to="#">
         <FiBell /> <span>Notificações</span>
       </ThemeSidebarLinkButton>
-      <ThemeSidebarLinkButton
-        selected={actualPath === "/messages"}
-        to="/messages"
-      >
+      <ThemeSidebarLinkButton selected={actualPath === "/messages"} to="#">
         <FiMail /> <span>Mensagens</span>
       </ThemeSidebarLinkButton>
-      <ThemeSidebarLinkButton
-        selected={actualPath === "/profile"}
-        to="/profile"
-      >
+      <ThemeSidebarLinkButton selected={actualPath === "/profile"} to="#">
         <FiUser /> <span>Perfil</span>
       </ThemeSidebarLinkButton>
-      <ThemeLinkButton $primary $extend to="/tweet">
-        Tuitar
+      <ThemeLinkButton $primary $extend to="#">
+        + Nova publicação
       </ThemeLinkButton>
 
       <ProfileSidebarChip
-        name="John Doe"
-        username="@john_doename"
+        name="User falso"
+        username="@falso"
         profileImage={JohnDoePic}
       />
     </SidebarContainer>

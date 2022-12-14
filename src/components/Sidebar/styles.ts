@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SidebarContainer = styled.div`
+export const SidebarContainer = styled.header`
   display: flex;
   flex-direction: column;
   gap: 10px;

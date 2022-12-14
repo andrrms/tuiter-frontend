@@ -1,5 +1,6 @@
 import React from "react";
 import Sidebar from "../Sidebar";
+import SideTempPanel from "../SideTempPanel";
 
 import {
   AsideView,
@@ -8,14 +9,35 @@ import {
   ThreePanelViewContainer,
 } from "./styles";
 
-const ThreePanelView: React.FC<React.PropsWithChildren> = ({ children }) => {
+interface IThreePanelView {
+  disableLeftSide?: boolean;
+  customLeftSideComponent?: React.ReactNode;
+  disableRightSide?: boolean;
+  customRightSideComponent?: React.ReactNode;
+  customMainSize?: string;
+}
+
+const ThreePanelView: React.FC<React.PropsWithChildren<IThreePanelView>> = ({
+  children,
+  disableLeftSide,
+  disableRightSide,
+  customLeftSideComponent,
+  customRightSideComponent,
+  customMainSize,
+}) => {
   return (
-    <ThreePanelViewContainer>
-      <SidebarView>
-        <Sidebar />
-      </SidebarView>
+    <ThreePanelViewContainer
+      disableLeftSide={!!disableLeftSide}
+      disableRightSide={!!disableRightSide}
+      customMainSize={customMainSize}
+    >
+      {!disableLeftSide && (
+        <SidebarView>{customLeftSideComponent || <Sidebar />}</SidebarView>
+      )}
       <MainView>{children}</MainView>
-      <AsideView>Ainda vai ter algo</AsideView>
+      {!disableRightSide && (
+        <AsideView>{customRightSideComponent || <SideTempPanel />}</AsideView>
+      )}
     </ThreePanelViewContainer>
   );
 };

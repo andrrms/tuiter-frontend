@@ -6,7 +6,7 @@ import {
   ProfileName,
   ProfileSidebarChipContainer,
   Username,
-} from "./styled";
+} from "./styles";
 
 interface IProfileSidebarChip
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,7 +24,7 @@ const ProfileSidebarChip: React.FC<IProfileSidebarChip> = ({
   return (
     <ProfileSidebarChipContainer {...props}>
       <figure>
-        <img src={profileImage} alt="Foto de perfil" />
+        <img draggable="false" src={profileImage} alt="Foto de perfil" />
       </figure>
       <ButtonContentArea>
         <ProfileName>{name}</ProfileName>

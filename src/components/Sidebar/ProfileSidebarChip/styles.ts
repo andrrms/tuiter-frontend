@@ -56,10 +56,11 @@ export const ButtonContentArea = styled.div`
 export const ProfileName = styled.p`
   font-size: 1rem;
   font-family: "Inter";
-  font-weight: 600;
+  font-weight: 700;
 `;
 
 export const Username = styled(ProfileName)`
   font-size: 0.9rem;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.6);
 `;

@@ -1,16 +1,17 @@
 import { useRoutes } from "react-router-dom";
 
-import HomePage from "../pages/HomePage";
+import ThreePanelView from "../components/ThreePanelView";
+import MainArticleFeed from "../components/MainArticleFeed";
 
 export default function Routes() {
   const routes = [
     {
-      path: "/home",
-      element: <HomePage />,
-    },
-    {
-      path: "/explore",
-      element: <HomePage />,
+      path: "*",
+      element: (
+        <ThreePanelView>
+          <MainArticleFeed />
+        </ThreePanelView>
+      ),
     },
   ];
 
